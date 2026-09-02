@@ -1,3 +1,20 @@
+html {
+    scrollbar-width:thin;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Website Header */
+#website-header {
+    width: 100%;
+    height: 250px;
+    background-color: gray;
+}
+
 .profile-pic {
     width: 150px;
 }
