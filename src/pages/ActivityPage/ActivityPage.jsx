@@ -1,4 +1,5 @@
 import "./ActivityPage.css";
+import ActivityCard from "../../components/ActivityCard/ActivityCard.jsx";
 
 function ActivityPage() {
   return (
@@ -11,9 +12,7 @@ function ActivityPage() {
             Featured Activity
           </div>
 
-          <div className="activity-card">Activity</div>
-          <div className="activity-card">Activity</div>
-          <div className="activity-card">Activity</div>
+          <ActivityCard title="Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade"/>
         </div>
       </section>
     </main>
