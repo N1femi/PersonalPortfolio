@@ -1,4 +1,4 @@
-import "./Activity.css";
+import "./ActivityPage.css";
 
 function Activity() {
   return (
