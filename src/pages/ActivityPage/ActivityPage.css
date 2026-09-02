@@ -1,3 +1,31 @@
 .activity-page {
-  padding: 2rem;
+  width: 100%;
+  padding: 32px;
+}
+
+.recent-activity h1 {
+  margin: 0 0 24px;
+}
+
+.activity-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.featured-activity,
+.activity-card {
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #eaeaea;
+}
+
+.featured-activity {
+  width: 420px;
+  height: 260px;
+}
+
+.activity-card {
+  width: 220px;
+  height: 260px;
 }
