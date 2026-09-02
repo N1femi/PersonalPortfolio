@@ -1,6 +1,35 @@
 .portfolio-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 20px 32px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-image {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.profile-info h2,
+.profile-info p {
+  margin: 0;
+}
+
+.portfolio-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.portfolio-nav a {
+  text-decoration: none;
+  color: inherit;
 }
