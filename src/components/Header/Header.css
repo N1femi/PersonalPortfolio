@@ -1,3 +1,7 @@
+:root {
+  --pfp-radius: 40px;
+}
+
 .portfolio-header {
   width: 100%;
   display: flex;
@@ -9,12 +13,12 @@
 .profile-section {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .profile-image {
-  width: 52px;
-  height: 52px;
+  width: var(--pfp-radius);
+  height: var(--pfp-radius);
   border-radius: 50%;
   background: #ccc;
 }
