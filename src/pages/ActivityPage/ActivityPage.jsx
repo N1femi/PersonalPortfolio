@@ -8,11 +8,16 @@ function ActivityPage() {
         <h1>Recently Did...</h1>
 
         <div className="activity-row">
-          <div className="featured-activity">
-            Featured Activity
-          </div>
 
-          <ActivityCard title="Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade"/>
+          <ActivityCard class="featured-activity" title="Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
+          
+          <ActivityCard title="Test 2" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
+          <ActivityCard title="Test 3" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
+          <ActivityCard title="Im a testy test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade"/>
+          <ActivityCard title="Testing Testing" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade"/>
+          <ActivityCard title="Anotha Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
+          <ActivityCard title="Anotha Another Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
+          
         </div>
       </section>
     </main>

@@ -1,5 +1,25 @@
+:root {
+    --title-color: white;
+    --title-background: rgba(0, 0, 0, 0.25);
+}
+
 #main-box {
     width: 200px;
     height: 200px;
-    background-color: black;
+    background-color: grey;
+
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#title-section {
+    width: 100%;
+    margin-top: auto;
+    padding: 10px;
+
+    background: var(--title-background);
+    color: var(--title-color);
+
 }

@@ -9,7 +9,7 @@
 
 .activity-row {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   overflow-x: auto;
 }
 

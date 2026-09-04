@@ -1,11 +1,13 @@
 import "./ActivityCard.css"
 
-function ActivityCard({ title, description, date }) {
+function ActivityCard({ title, description, date, backgroundImage="../../assets/imagePlaceholder" }) {
     return (
         <div id="main-box">
-            <p>
-                title
-            </p>
+            
+
+            <div id="title-section">
+                {title}
+            </div>
         </div>
     )
 }
