@@ -8,16 +8,20 @@ function Header() {
   return (
     <header className="portfolio-header">
       <div className="profile-section">
-        <img class="profile-image" src={profileImage} alt="Profile Picture" />
+        <img className="profile-image" src={profileImage} alt="Profile Picture" />
         <span>{profileName}</span>
       </div>
 
-      <nav class="portfolio-nav">
+      <nav className="portfolio-nav">
         <a href="#">Activity</a>
         <a href="#">Library</a>
         <a href="#">News</a>
         <a href="#">Bio</a>
       </nav>
+
+      <div className="time-section">
+        Sept 4, 2026 | Wednesday 11:50 AM
+      </div>
     </header>
   );
 }
