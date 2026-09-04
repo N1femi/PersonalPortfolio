@@ -5,8 +5,7 @@ function ActivityPage() {
   return (
     <main className="activity-page">
       <section className="recent-activity">
-        <h1>Recently Did...</h1>
-
+        
         <div className="activity-row">
 
           <ActivityCard class="featured-activity" title="Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
