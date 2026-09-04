@@ -16,7 +16,8 @@ function ActivityPage() {
           <ActivityCard title="Testing Testing" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade"/>
           <ActivityCard title="Anotha Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
           <ActivityCard title="Anotha Another Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
-          
+          <ActivityCard title="Anotha Another Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
+           <ActivityCard title="Anotha Another Test" description="BlahBlahBlah Lalalala Boogeyman Boo" date="Some time last decade" />
         </div>
       </section>
     </main>
