@@ -2,11 +2,14 @@ import "./Header.css";
 import profileImage from "../../assets/images/profile.jpg"
 
 function Header() {
+  const profileName = "NotN1femi"
+
+
   return (
     <header className="portfolio-header">
       <div className="profile-section">
-        <img class="profile-image" src={profileImage} alt="Profile Picture"></img>
-        <span>Nifemi</span>
+        <img class="profile-image" src={profileImage} alt="Profile Picture" />
+        <span>{profileName}</span>
       </div>
 
       <nav class="portfolio-nav">
