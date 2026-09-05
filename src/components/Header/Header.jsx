@@ -1,5 +1,6 @@
 import "./Header.css";
 import profileImage from "../../assets/images/profile.jpg"
+import subscriptionLabel from "../../assets/icons/subscriptionLabel.svg"
 
 function Header() {
   const profileName = "NotN1femi"
@@ -9,7 +10,11 @@ function Header() {
     <header className="portfolio-header">
       <div className="profile-section">
         <img className="profile-image" src={profileImage} alt="Profile Picture" />
-        <span>{profileName}</span>
+        <div>
+          {profileName}
+          <img className="subscription-label" src={subscriptionLabel} alr="subscription" />
+        </div>
+        
       </div>
 
       <nav className="portfolio-nav">
