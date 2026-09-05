@@ -1,6 +1,19 @@
 .gameplay-hero {
   width: 100%;
   padding: 10px;
+  white-space: nowrap;
+
+  overflow: hidden;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .gameplay-window {
@@ -26,4 +39,29 @@
   );
 
   pointer-events: none;
+}
+
+.gameplay-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 18s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 30px;
+}
+
+.marquee-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
