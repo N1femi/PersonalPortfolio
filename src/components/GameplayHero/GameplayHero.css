@@ -44,7 +44,7 @@
 .gameplay-marquee {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 18s linear infinite;
+  animation: marquee-scroll 35s linear infinite;
 }
 
 .marquee-content {
