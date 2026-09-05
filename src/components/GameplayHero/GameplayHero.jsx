@@ -29,7 +29,7 @@ function GameplayHero() {
     { name: "NumPy", icon: numpyLogo },
     { name: "Electron", icon: electronLogo},
     
-    { name: "HTML", icon: html5Logo},
+    { name: "HTML5", icon: html5Logo},
     { name: "CSS", icon: cssLogo },
     { name: "JavaScript", icon: javascriptLogo },
     { name: "TypeScript", icon: typescriptLogo },
@@ -55,7 +55,11 @@ function GameplayHero() {
           <div className="marquee-content">
             {marqueeItems.map((item) => (
               <span className="marquee-item" key={item.name}>
-                <img src={item.icon} alt="" />
+                <img
+                  src={item.icon}
+                  alt="" 
+                  draggable={false}
+                  />
                 {item.name}
               </span>
             ))}
@@ -64,7 +68,11 @@ function GameplayHero() {
           <div className="marquee-content" aria-hidden="true">
             {marqueeItems.map((item) => (
               <span className="marquee-item" key={item.name}>
-                <img src={item.icon} alt="" />
+                <img
+                  src={item.icon}
+                  alt="" 
+                  draggable={false}
+                  />
                 {item.name}
               </span>
             ))}

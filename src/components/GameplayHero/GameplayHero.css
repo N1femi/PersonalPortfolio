@@ -45,7 +45,16 @@
   display: flex;
   width: max-content;
   animation: marquee-scroll 35s linear infinite;
+
+  user-select: none;
+  pointer-events: none;
 }
+
+.gameplay-hero:hover .gameplay-marquee {
+  animation-play-state: paused;
+}
+
+
 
 .marquee-content {
   display: flex;
