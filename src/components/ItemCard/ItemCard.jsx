@@ -1,6 +1,6 @@
-import "./ActivityCard.css"
+import "./ItemCard.css"
 
-function ActivityCard({ title, description, date, background="https://placehold.co/200" }) {
+function ItemCard({ title, description, date="Recent", background="https://placehold.co/200" }) {
     return (
         <div
             id="main-box"
@@ -16,4 +16,4 @@ function ActivityCard({ title, description, date, background="https://placehold.
 }
 
 
-export default ActivityCard
+export default ItemCard
