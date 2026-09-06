@@ -66,12 +66,12 @@
     transform: translateY(5px);
   }
 
-  3% {
+  5% {
     opacity: 1;
     transform: translateY(0);
   }
 
-  97% {
+  95% {
     opacity: 1;
     transform: translateY(0);
   }
