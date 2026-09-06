@@ -55,3 +55,29 @@
 .subscription-label {
   width: 100px;
 }
+
+.changing-time {
+  animation: cross-fade 10s linear;
+}
+
+@keyframes cross-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  3% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  97% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
