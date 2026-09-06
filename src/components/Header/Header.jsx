@@ -25,7 +25,7 @@ function Header() {
       setShowDate(function (previousValue) {
         return !previousValue
       })
-    }, 10000)
+    }, 8000)
 
     return function () {
       clearInterval(fadeInterval)

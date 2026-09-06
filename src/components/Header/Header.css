@@ -57,7 +57,7 @@
 }
 
 .changing-time {
-  animation: cross-fade 10s linear;
+  animation: cross-fade 8s linear;
 }
 
 @keyframes cross-fade {
