@@ -20,6 +20,9 @@ import postmanLogo from "../../assets/icons/postman.svg"
 import robloxStudioLogo from "../../assets/icons/robloxStudio.svg"
 import supabaseLogo from "../../assets/icons/supabase.svg"
 
+// Other Images
+import backgroundImage from "../../assets/images/background.jpg"
+
 function GameplayHero() {
   const marqueeItems = [
     { name: "C++", icon: cppLogo },
@@ -82,7 +85,7 @@ function GameplayHero() {
 
       <section
         className="gameplay-window"
-        style={{ backgroundImage: `url("https://placehold.co/200")` }}
+        style={{ backgroundImage: `url(${backgroundImage})`}}
       />
     </>
   );

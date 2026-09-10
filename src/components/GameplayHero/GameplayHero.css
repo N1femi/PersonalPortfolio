@@ -18,12 +18,12 @@
 
 .gameplay-window {
   width: 100%;
-  height: 420px;
+  height: 700px;
 
   position: relative;
 
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 }
 
