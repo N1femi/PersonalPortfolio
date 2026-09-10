@@ -1,0 +1,5 @@
+.page-viewport {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
