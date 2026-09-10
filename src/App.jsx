@@ -33,7 +33,11 @@ function App() {
   console.log(scrollAmount)
   return (
     <>
-      <GameplayHero />
+      <div
+        style={{ transform: `translateY(-${heroScroll}px)` }}
+      >
+        <GameplayHero />
+      </div>
 
       <div className="main-content">
         <Header />
