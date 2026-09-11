@@ -1,3 +1,5 @@
+import "./App.css"
+
 import GameplayHero from "./components/GameplayHero/GameplayHero"
 import Header from "./components/Header/Header"
 import ActivityPage from "./pages/ActivityPage/ActivityPage"
@@ -15,8 +17,7 @@ function App() {
   const mainContentRef = useRef(null)
   const heroRef = useRef(null)
 
-  const heroScrollingLimit = window.innerHeight * 0.25
-  const maxScroll = heroScrollingLimit + pageScrollLimit
+  const maxScroll = pageScrollLimit
   const dampener = 0.08
 
 
@@ -91,17 +92,17 @@ function App() {
   }, [scrollAmount])
 
   const parallaxSpeed = 0.4
-
+  const heroMaxScroll = Math.max(heroHeight - window.innerHeight, 0)
   const rawHeroScroll = displayScroll * parallaxSpeed
   const heroScroll = Math.min(rawHeroScroll, heroMaxScroll)
   const pageScroll = displayScroll
-  const heroMaxScroll = Math.max(heroHeight - window.innerHeight, 0)
 
   console.log(scrollAmount)
   return (
     <div className="page-viewport">
       <div
         ref={heroRef}
+        className="hero-wrapper"
         style={{ transform: `translateY(-${heroScroll}px)` }}
       >
         <GameplayHero />

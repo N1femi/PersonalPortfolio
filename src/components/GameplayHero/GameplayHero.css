@@ -22,9 +22,6 @@
 .gameplay-window {
   width: 100%;
   position: relative;
-
-  height: clamp(600px, 90vh, 900px);
-  overflow: hidden;
 }
 
 .gameplay-background {
