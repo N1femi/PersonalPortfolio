@@ -54,9 +54,10 @@
     rgba(0, 0, 0, 0.14) 40%,
     rgba(35, 0, 0, 0.16) 60%,
     rgba(55, 0, 0, 0.20) 75%,
-    rgba(12, 0, 0 0.24) 100%
+    rgba(12, 0, 0, 0.24) 100%
   );
 }
+
 .gameplay-marquee {
   display: flex;
   width: max-content;
