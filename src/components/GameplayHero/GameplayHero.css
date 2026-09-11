@@ -1,9 +1,12 @@
 .gameplay-hero {
-  width: 100%;
-  padding: 1vh;
-  white-space: nowrap;
+  position: absolute;
 
-  overflow: hidden;
+  top: 1vh;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 2;
 }
 
 @keyframes marquee-scroll {
@@ -18,13 +21,13 @@
 
 .gameplay-window {
   width: 100%;
-  height: 75vh;
-
   position: relative;
+}
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.gameplay-background {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .gameplay-window::after {
@@ -35,17 +38,18 @@
 
   pointer-events: none;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.08) 0%,
-      rgba(0, 0, 0, 0.12) 55%,
-      rgba(55, 0, 0, 0.25) 75%,
-      rgba(95, 0, 0, 0.5) 88%,
-      rgb(18, 17, 17) 100%
-    );
-}
+  z-index: 1;
 
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10) 0%,
+    rgba(0, 0, 0, 0.12) 20%,
+    rgba(0, 0, 0, 0.14) 40%,
+    rgba(35, 0, 0, 0.16) 60%,
+    rgba(55, 0, 0, 0.20) 75%,
+    rgba(70, 0, 0, 0.24) 100%
+  );
+}
 .gameplay-marquee {
   display: flex;
   width: max-content;
@@ -90,15 +94,18 @@
 
   height: 10vh;
 
+  z-index: 1;
+
   backdrop-filter: blur(1vh);
   -webkit-backdrop-filter: blur(1vh);
 
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(0, 0, 0, 0.28);
 
   mask-image: linear-gradient(
     to bottom,
     black 0%,
-    black 40%,
+    black 35%,
+    rgba(0, 0, 0, 0.7) 55%,
     transparent 100%
   );
 

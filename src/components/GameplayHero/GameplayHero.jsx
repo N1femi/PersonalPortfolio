@@ -52,10 +52,15 @@ function GameplayHero() {
   ];
 
   return (
-    <section
-      className="gameplay-window"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <section className="gameplay-window">
+      
+      <img
+        className="gameplay-background"
+        src={backgroundImage}
+        alt=""
+        draggable={false}
+      />
+      
       <div className="marquee-background"></div>
 
       <section className="gameplay-hero">
