@@ -18,15 +18,13 @@
 
 .gameplay-window {
   width: 100%;
-  height: 420px;
+  height: 650px;
 
   position: relative;
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
 }
 
 .gameplay-window::after {
@@ -39,10 +37,10 @@
 
   background: linear-gradient(
     to bottom,
-    transparent 70%,
-    rgba(28, 28, 28, 0.15) 80%,
-    rgba(28, 28, 28, 0.5) 90%,
-    rgb(28, 28, 28) 100%
+    transparent 78%,
+    rgba(28, 28, 28, 0.12) 84%,
+    rgba(28, 28, 28, 0.45) 92%,
+    rgb(18, 17, 17) 100%
   );
 }
 

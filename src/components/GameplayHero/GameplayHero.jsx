@@ -52,9 +52,12 @@ function GameplayHero() {
   ];
 
   return (
-    <>
+    <section
+      className="gameplay-window"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="marquee-background"></div>
-      
+
       <section className="gameplay-hero">
         <div className="gameplay-marquee">
           <div className="marquee-content">
@@ -62,9 +65,10 @@ function GameplayHero() {
               <span className="marquee-item" key={item.name}>
                 <img
                   src={item.icon}
-                  alt="" 
+                  alt=""
                   draggable={false}
-                  />
+                />
+
                 {item.name}
               </span>
             ))}
@@ -75,22 +79,18 @@ function GameplayHero() {
               <span className="marquee-item" key={item.name}>
                 <img
                   src={item.icon}
-                  alt="" 
+                  alt=""
                   draggable={false}
-                  />
+                />
+
                 {item.name}
               </span>
             ))}
           </div>
         </div>
       </section>
-
-      <section
-        className="gameplay-window"
-        style={{ backgroundImage: `url(${backgroundImage})`}}
-      />
-    </>
-  );
+    </section>
+  )
 }
 
 export default GameplayHero;
