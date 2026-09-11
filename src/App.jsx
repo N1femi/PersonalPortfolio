@@ -10,24 +10,44 @@ function App() {
   const [scrollAmount, setScrollAmount] = useState(0)
   const [pageScrollLimit, setPageScrollLimit] = useState(0)
   const [displayScroll, setDisplayScroll] = useState(0)
+  const [heroHeight, setHeroHeight] = useState(0)
 
   const mainContentRef = useRef(null)
-  const heroScrollingLimit = 450
+  const heroRef = useRef(null)
+
+  const heroScrollingLimit = window.innerHeight * 0.25
   const maxScroll = heroScrollingLimit + pageScrollLimit
   const dampener = 0.08
 
 
   /* Main Preview Scrolling */
   useEffect(function () {
-  if (mainContentRef.current) {
-    const contentStart = mainContentRef.current.offsetTop
-    const contentHeight = mainContentRef.current.scrollHeight
+    function measureLayout() {
+      if (heroRef.current) {
+        setHeroHeight(heroRef.current.scrollHeight)
+      }
 
-    const scrollLimit = contentStart + contentHeight - window.innerHeight
+      if (mainContentRef.current) {
+        const contentStart = mainContentRef.current.offsetTop
+        const contentHeight = mainContentRef.current.scrollHeight
 
-    setPageScrollLimit(
-      Math.max(scrollLimit, 0)
-      )
+        const scrollLimit =
+          contentStart +
+          contentHeight -
+          window.innerHeight
+
+        setPageScrollLimit(
+          Math.max(scrollLimit, 0)
+        )
+      }
+    }
+
+    measureLayout()
+
+    window.addEventListener("resize", measureLayout)
+
+    return function () {
+      window.removeEventListener("resize", measureLayout)
     }
   }, [])
 
@@ -36,10 +56,7 @@ function App() {
       setScrollAmount(function (oldScrollAmount) {
         const newScrollAmount = oldScrollAmount + event.deltaY
 
-        return Math.max(
-          0, 
-          Math.min(newScrollAmount, maxScroll)
-        )
+        return Math.max(0, Math.min(newScrollAmount, maxScroll))
       })
     }
 
@@ -73,14 +90,18 @@ function App() {
     }
   }, [scrollAmount])
 
-  const heroScroll = Math.min(displayScroll, heroScrollingLimit)
-  const pageScroll = Math.max(displayScroll - heroScrollingLimit, 0)
-  
+  const parallaxSpeed = 0.4
+
+  const rawHeroScroll = displayScroll * parallaxSpeed
+  const heroScroll = Math.min(rawHeroScroll, heroMaxScroll)
+  const pageScroll = displayScroll
+  const heroMaxScroll = Math.max(heroHeight - window.innerHeight, 0)
 
   console.log(scrollAmount)
   return (
     <div className="page-viewport">
       <div
+        ref={heroRef}
         style={{ transform: `translateY(-${heroScroll}px)` }}
       >
         <GameplayHero />
