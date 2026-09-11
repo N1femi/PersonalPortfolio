@@ -20,6 +20,9 @@ import postmanLogo from "../../assets/icons/postman.svg"
 import robloxStudioLogo from "../../assets/icons/robloxStudio.svg"
 import supabaseLogo from "../../assets/icons/supabase.svg"
 
+// Other Images
+import backgroundImage from "../../assets/images/background.jpg"
+
 function GameplayHero() {
   const marqueeItems = [
     { name: "C++", icon: cppLogo },
@@ -49,7 +52,17 @@ function GameplayHero() {
   ];
 
   return (
-    <>
+    <section className="gameplay-window">
+      
+      <img
+        className="gameplay-background"
+        src={backgroundImage}
+        alt=""
+        draggable={false}
+      />
+      
+      <div className="marquee-background"></div>
+
       <section className="gameplay-hero">
         <div className="gameplay-marquee">
           <div className="marquee-content">
@@ -57,9 +70,10 @@ function GameplayHero() {
               <span className="marquee-item" key={item.name}>
                 <img
                   src={item.icon}
-                  alt="" 
+                  alt=""
                   draggable={false}
-                  />
+                />
+
                 {item.name}
               </span>
             ))}
@@ -70,22 +84,18 @@ function GameplayHero() {
               <span className="marquee-item" key={item.name}>
                 <img
                   src={item.icon}
-                  alt="" 
+                  alt=""
                   draggable={false}
-                  />
+                />
+
                 {item.name}
               </span>
             ))}
           </div>
         </div>
       </section>
-
-      <section
-        className="gameplay-window"
-        style={{ backgroundImage: `url("https://placehold.co/200")` }}
-      />
-    </>
-  );
+    </section>
+  )
 }
 
 export default GameplayHero;
