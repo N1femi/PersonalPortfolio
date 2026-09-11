@@ -12,14 +12,11 @@ function App() {
   const [displayScroll, setDisplayScroll] = useState(0)
 
   const mainContentRef = useRef(null)
-  const heroScrollingLimit = 200
+  const heroScrollingLimit = 450
   const maxScroll = heroScrollingLimit + pageScrollLimit
-  const dampener = 0.025
-  
-  useEffect(function () {
-    
-  }, [])
-  
+  const dampener = 0.08
+
+
   /* Main Preview Scrolling */
   useEffect(function () {
   if (mainContentRef.current) {
