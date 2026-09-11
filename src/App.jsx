@@ -16,16 +16,17 @@ function App() {
 
   const mainContentRef = useRef(null)
   const heroRef = useRef(null)
+  const heroContentRef = useRef(null)
 
   const maxScroll = pageScrollLimit
-  const dampener = 0.08
+  const dampener = 0.04
 
 
   /* Main Preview Scrolling */
   useEffect(function () {
     function measureLayout() {
-      if (heroRef.current) {
-        setHeroHeight(heroRef.current.scrollHeight)
+      if (heroContentRef.current) {
+        setHeroHeight(heroContentRef.current.scrollHeight)
       }
 
       if (mainContentRef.current) {
@@ -41,8 +42,8 @@ function App() {
       measureLayout()
     })
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current)
+    if (heroContentRef.current) {
+      observer.observe(heroContentRef.current)
     }
 
     if (mainContentRef.current) {
@@ -110,9 +111,14 @@ function App() {
       <div
         ref={heroRef}
         className="hero-wrapper"
-        style={{ transform: `translateY(-${heroScroll}px)` }}
       >
-        <GameplayHero />
+        <div
+          ref={heroContentRef}
+          className="hero-content"
+          style={{ transform: `translateY(-${heroScroll}px)` }}
+        >
+          <GameplayHero />
+        </div>
       </div>
 
       <div
