@@ -21,12 +21,19 @@
 
 .gameplay-window {
   width: 100%;
+  height: 120vh;
+
   position: relative;
+  overflow: hidden;
 }
 
 .gameplay-background {
   width: 100%;
-  height: auto;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center top;
+
   display: block;
 }
 

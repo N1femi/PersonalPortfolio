@@ -31,16 +31,22 @@ function App() {
       if (mainContentRef.current) {
         const contentStart = mainContentRef.current.offsetTop
         const contentHeight = mainContentRef.current.scrollHeight
+        const scrollLimit = contentStart + contentHeight - window.innerHeight
 
-        const scrollLimit =
-          contentStart +
-          contentHeight -
-          window.innerHeight
-
-        setPageScrollLimit(
-          Math.max(scrollLimit, 0)
-        )
+        setPageScrollLimit(Math.max(scrollLimit, 0))
       }
+    }
+
+    const observer = new ResizeObserver(function () {
+      measureLayout()
+    })
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current)
+    }
+
+    if (mainContentRef.current) {
+      observer.observe(mainContentRef.current)
     }
 
     measureLayout()
@@ -48,6 +54,7 @@ function App() {
     window.addEventListener("resize", measureLayout)
 
     return function () {
+      observer.disconnect()
       window.removeEventListener("resize", measureLayout)
     }
   }, [])
