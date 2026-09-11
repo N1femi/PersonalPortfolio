@@ -9,20 +9,24 @@ import { useState, useEffect, useRef } from "react"
 function App() {
   const [scrollAmount, setScrollAmount] = useState(0)
   const [pageScrollLimit, setPageScrollLimit] = useState(0)
+  const [displayScroll, setDisplayScroll] = useState(0)
 
   const mainContentRef = useRef(null)
   const heroScrollingLimit = 200
   const maxScroll = heroScrollingLimit + pageScrollLimit
-
+  const dampener = 0.025
+  
+  useEffect(function () {
+    
+  }, [])
+  
+  /* Main Preview Scrolling */
   useEffect(function () {
   if (mainContentRef.current) {
     const contentStart = mainContentRef.current.offsetTop
     const contentHeight = mainContentRef.current.scrollHeight
 
-    const scrollLimit =
-      contentStart +
-      contentHeight -
-      window.innerHeight
+    const scrollLimit = contentStart + contentHeight - window.innerHeight
 
     setPageScrollLimit(
       Math.max(scrollLimit, 0)
@@ -49,8 +53,31 @@ function App() {
     }
   }, [maxScroll])
 
-  const heroScroll = Math.min(scrollAmount, heroScrollingLimit)
-  const pageScroll = Math.max(scrollAmount - heroScrollingLimit, 0)
+  useEffect(function () {
+    let animationFrame
+
+    function smoothScroll() {
+      setDisplayScroll(function (oldDisplayScroll) {
+        const difference =
+          scrollAmount - oldDisplayScroll
+
+        return oldDisplayScroll + difference * dampener
+      })
+
+      animationFrame =
+        requestAnimationFrame(smoothScroll)
+    }
+
+    animationFrame =
+      requestAnimationFrame(smoothScroll)
+
+    return function () {
+      cancelAnimationFrame(animationFrame)
+    }
+  }, [scrollAmount])
+
+  const heroScroll = Math.min(displayScroll, heroScrollingLimit)
+  const pageScroll = Math.max(displayScroll - heroScrollingLimit, 0)
   
 
   console.log(scrollAmount)

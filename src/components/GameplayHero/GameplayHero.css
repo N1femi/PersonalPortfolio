@@ -18,27 +18,32 @@
 
 .gameplay-window {
   width: 100%;
-  height: 700px;
+  height: 420px;
 
   position: relative;
 
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
+
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
 }
 
 .gameplay-window::after {
   content: "";
+
   position: absolute;
   inset: 0;
 
+  pointer-events: none;
+
   background: linear-gradient(
     to bottom,
-    transparent 80%,
-    white 100%
+    transparent 70%,
+    rgba(28, 28, 28, 0.15) 80%,
+    rgba(28, 28, 28, 0.5) 90%,
+    rgb(28, 28, 28) 100%
   );
-
-  pointer-events: none;
 }
 
 .gameplay-marquee {
@@ -48,13 +53,14 @@
 
   user-select: none;
   pointer-events: none;
+
+  position: relative;
+  z-index: 2;
 }
 
 .gameplay-hero:hover .gameplay-marquee {
   animation-play-state: paused;
 }
-
-
 
 .marquee-content {
   display: flex;
@@ -73,4 +79,29 @@
   width: 28px;
   height: 28px;
   object-fit: contain;
+}
+
+.marquee-background {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 110px;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  background: rgba(0, 0, 0, 0.18);
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 40%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: 1;
 }

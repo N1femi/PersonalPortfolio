@@ -53,6 +53,8 @@ function GameplayHero() {
 
   return (
     <>
+      <div className="marquee-background"></div>
+      
       <section className="gameplay-hero">
         <div className="gameplay-marquee">
           <div className="marquee-content">
