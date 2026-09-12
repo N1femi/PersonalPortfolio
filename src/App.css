@@ -67,7 +67,7 @@
 
   opacity: 0.7;
 
-  transition: opacity 0.4s ease;
+  transition: opacity 0.15s ease;
 
   z-index: 20;
 }
@@ -84,16 +84,16 @@
 
 @keyframes scroll-bob {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(-1vh);
   }
 
   50% {
-    transform: translateY(6px);
+    transform: translateY(1vh);
   }
 }
 
 .bottom-space {
-  height: 300px;
+  height: 4vh;
 
   background: linear-gradient(
     to bottom,

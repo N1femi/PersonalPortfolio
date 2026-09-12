@@ -134,14 +134,16 @@ function App() {
 
       <div
         ref={mainContentRef}
-        className="main-content"
+        className="main-content-wrapper"
         style={{ transform: `translateY(-${pageScroll}px)` }}
       >
-        <Header />
-        <ActivityPage />
-      </div>
+        <div className="main-content">
+          <Header />
+          <ActivityPage />
+        </div>
 
-      <div className="bottom-space" />
+        <div className="bottom-space"/>
+      </div>
       
     </div>
   );
