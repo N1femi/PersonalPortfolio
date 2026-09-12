@@ -22,8 +22,8 @@ body {
 }
 
 body,
-.page-viewport,
-.main-content {
+.page-viewport
+{
   background: var(--page-background);
 }
 

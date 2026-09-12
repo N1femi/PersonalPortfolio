@@ -140,6 +140,8 @@ function App() {
         <Header />
         <ActivityPage />
       </div>
+
+      <div className="bottom-space" />
       
     </div>
   );
