@@ -99,15 +99,26 @@ function App() {
     }
   }, [scrollAmount])
 
-  const parallaxSpeed = 0.4
   const heroMaxScroll = Math.max(heroHeight - window.innerHeight, 0)
-  const rawHeroScroll = displayScroll * parallaxSpeed
-  const heroScroll = Math.min(rawHeroScroll, heroMaxScroll)
+  const scrollProgress = maxScroll > 0 ? displayScroll / maxScroll : 0
+  const heroScroll = scrollProgress * heroMaxScroll
   const pageScroll = displayScroll
 
   console.log(scrollAmount)
   return (
     <div className="page-viewport">
+
+      <div
+        className={
+          displayScroll < 20
+            ? "scroll-hint"
+            : "scroll-hint scroll-hint-hidden"
+        }
+      >
+        <span>Scroll</span>
+        <span className="scroll-arrow">⌄</span>
+      </div>
+
       <div
         ref={heroRef}
         className="hero-wrapper"
